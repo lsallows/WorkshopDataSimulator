@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SQLScripts\01-WorkshopSim-CreateTables.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SQLScripts\01-WorkshopSim-CreateTables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.60.6" />
+    <PackageReference Include="dbup-sqlserver" Version="4.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
